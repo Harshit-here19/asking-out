@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">
+          Do you wanna go out with me <span>Kirti JI</span> ?
+        </h1>
+      </div>
 
-<body>
-	<div class="container">
-		<div>
-			<h1 class="header_text">Do you wanna go out with me <span>Kirti JI</span> ?</h1>
-		</div>
+      <div class="gif_container">
+        <img src="img/asking.gif" alt="Cute Animated illustration" />
+      </div>
 
-		<div class="gif_container">
-			<img src="img/asking.mp4" alt="Cute Animated illustration">
-		</div>
+      <div class="button">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button
+          class="btn"
+          id="noButton"
+          onclick="moveButton()"
+          onmouseover="moveButton()"
+        >
+          No
+        </button>
+      </div>
 
-		<div class="button">
-			<button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-			<button class="btn" id="noButton" onclick="moveButton()" onmouseover="moveButton()">No</button>
-		</div>
+      <script>
+        function nextPage() {
+          window.location.href = "yes.html";
+        }
 
-		<script>
-			function nextPage() {
-				window.location.href = "yes.html";
-			}
+        function moveButton() {
+          var x =
+            Math.random() *
+            (window.innerWidth -
+              document.getElementById("noButton").offsetWidth);
+          var y =
+            Math.random() *
+            (window.innerHeight -
+              document.getElementById("yesButton").offsetHeight);
 
-			function moveButton() {
-				var x = Math.random() * (window.innerWidth - document.getElementById("noButton").offsetWidth);
-				var y = Math.random() * (window.innerHeight - document.getElementById("yesButton").offsetHeight);
-
-				document.getElementById("noButton").style.left = `${x}px`;
-				document.getElementById("noButton").style.top = `${y}px`;
-
-			}
-
-		</script>
-
-	</div>
-</body>
-
+          document.getElementById("noButton").style.left = `${x}px`;
+          document.getElementById("noButton").style.top = `${y}px`;
+        }
+      </script>
+    </div>
+  </body>
 </html>
